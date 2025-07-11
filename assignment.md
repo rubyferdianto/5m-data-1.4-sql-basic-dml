@@ -44,7 +44,7 @@ Categorize flats into price ranges and count how many flats fall into each categ
 	(SELECT resale_price,
 	       CASE  
 	       		WHEN resale_price < 400000 THEN 'Budget'
-	       		WHEN resale_price >= 400000 AND resale_price < 700000 THEN 'Mid-Range'
+	       		WHEN resale_price BETWEEN 400000 AND 700000 THEN 'Mid-Range'
 	       		ELSE 'Premium'
 	       	END category
 	FROM main.resale_flat_prices_2017)
